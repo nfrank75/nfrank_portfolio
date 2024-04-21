@@ -1,0 +1,436 @@
+{% load static %}
+{% load fontawesome_5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Nfrank Portfolio {% block title %}  {% endblock title %} </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include fontawesome CSS -->
+    <link href="{% static 'fontawesome/css/all.min.css' %}" rel="stylesheet">
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popping', sans-serif;
+}
+
+body{
+    background: #081b29;
+    color: #ededed;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #00abf0;
+}
+
+.home{
+    height: 100vh;
+    display: flex;
+    background-size: cover ;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    /* padding: 0 10%; */
+    padding: 0 30%;
+}
+
+ .home-content{
+    background: transparent;
+    max-width: 600px;
+}
+
+
+
+.home-content h1{
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+
+}
+
+.home-content h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+}
+
+.home-content h3{
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+
+}
+
+.home-content h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-content p{
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+
+}
+
+.home-content p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-content .btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.home-content .btn-box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
+
+
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+} 
+
+.btn-box a:hover{
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2){
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover{
+    background: #081b29;
+}
+
+.btn-box a:nth-child(2)::before{
+    background: #00abf0;
+}
+
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+}
+
+.home-sci{
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    /* background: red; */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.home-sci::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before{
+    width: 100%;
+
+}
+
+.footer {
+    background: #081b29;
+    color: #ededed;
+    padding: 30px 0;
+}
+
+.footer-services {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-services h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-services ul {
+    list-style: none;
+}
+
+.footer-services ul li {
+    margin-bottom: 10px;
+}
+
+.footer-services ul li a {
+    color: #ededed;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer-services ul li a:hover {
+    color: #00abf0;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info hr {
+    border-color: #ededed;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 14px;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight{
+    100%  {
+        width: 0;
+    }
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="{% url 'home' %}" class="logo">Nfrank.</a>
+
+        <header class="navbar">
+            <a href="{% url 'home' %}" class="active">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'service' %}">Services</a>
+            <a href="{% url 'education' %}">Education</a>
+            <a href="{% url 'job' %}">Job</a>
+            <a href="{% url 'project' %}">Project</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'cv' %}">CV</a>
+        </header>
+
+    </header>
+
+    <!-- <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div> -->
+
+    
+    {% block content %}
+    {% endblock %}
+
+    
+    
+    <footer class="footer"><br><br><br><br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="footer-services">
+                        <h3 class="d-flex flex-wrap">Services 1</h3>
+                        <ul class="d-flex flex-wrap">
+                            <li><a href="{% url 'service' %}">Service 1</a></li>
+                            <li><a href="{% url 'service' %}">Service 1</a></li>
+                            <li><a href="{% url 'service' %}">Service 1</a></li>
+                            <li><a href="{% url 'service' %}">Service 1</a></li>
+                            <li><a href="{% url 'service' %}">Service 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="footer-services">
+                        <h3 class="d-flex flex-wrap">Services 2</h3>
+                        <ul class="d-flex flex-wrap">
+                            <li><a href="{% url 'service' %}">About</a></li>
+                            <li><a href="{% url 'service' %}">Service</a></li>
+                            <li><a href="{% url 'service' %}">Project</a></li>
+                            <li><a href="{% url 'service' %}">Infos</a></li>
+                            <li><a href="{% url 'service' %}">Education</a></li>
+                            <li><a href="{% url 'cv' %}">Education</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="footer-services">
+                        <h3 class="d-flex flex-wrap">Services 3</h3>
+                        <ul class="d-flex flex-wrap">
+                            <li><a href="{% url 'home' %}">Service 3</a></li>
+                            <li><a href="{% url 'service' %}">Service 3</a></li>
+                            <li><a href="{% url 'service' %}">Service 3</a></li>
+                            <li><a href="{% url 'service' %}">Service 3</a></li>
+                            <li><a href="{% url 'service' %}">Service 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-info">
+                <hr>
+                <p>&copy; 2024 Develop with love by Nfrank75@</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts JavaScript -->
+    <script src="{% static 'fontawesome/js/all.min.js' %}"></script>
+
+
+    
+</body>
+</html>

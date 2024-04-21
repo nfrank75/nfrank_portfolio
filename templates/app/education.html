@@ -1,0 +1,43 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} | Education {% endblock %}
+
+{% block content %}
+
+
+<div class="current-title">
+    <h1 class="career-title text-center mx-auto">
+
+        De façon globale la liste de mes édudes obtenues !
+    </h1>
+</div>
+<div class="home" style="display: flex; justify-content: center;  height: 100vh; background-position: center;">
+    {% for education in educations %}
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ education.name }}</h5>
+                <h6 class="card-subtitle">{{ education.title }}</h6>
+                <p class="card-text">{{ education.type_of_education }}</p>
+                <p class="card-text">{{ education.description }}</p>
+                <p class="card-text">{{ education.started_at }}</p>
+                <p class="card-text">{{ education.ended_at }}</p>
+                <p class="card-text">{{ education.school_name }}</p>
+                <p class="card-text">{{ education.country }}</p>
+                <p class="card-text">{{ education.rank }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div>
+    ookkkkk
+
+    okk 
+
+    ok 
+
+
+</div><br><br><br>
+
+{% endblock %}

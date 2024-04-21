@@ -1,0 +1,17 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} | Education {% endblock %}
+
+{% block content %}
+
+<div class="btn-box">
+    {% for cv in cv%}
+    <!-- <a href="{% url 'contact' %}">Hire me</a>
+    <a href="{% url 'contact' %}">Let's Talk</a>
+    <a href="./assets/images/cv_res.pdf" class="myButton">Download my CV</a> -->
+    <a href="{% static 'images/static/images/CV_Frank_Anael_NGALEU_.pdf' %}">{{cv.cv}}</a>
+    {% endfor %}
+</div>
+
+{% endblock %}

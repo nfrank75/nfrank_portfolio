@@ -1,0 +1,124 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load fontawesome_5 %}
+
+{% block title %} | Accueil {% endblock %}
+
+
+{% block content %}
+ 
+<style> 
+
+    
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+      
+    
+      
+      
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+      
+      hr.my-4 {
+        border-color: #ccc;
+      }
+      
+      .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 200px;
+        margin-bottom: 20px;
+      }
+      
+
+</style>
+
+<div class="jumbotron text-center" style="margin-left: 20px; margin-top: 50px;">
+    <!-- <img class="profile-image" src="{% static 'images/nf.jpg' %}" alt="Your Photo"> -->
+    <h1 class="display-4">Hi, I'm Nfrank</h1>
+    <img style="width: 150px; height: 150px;" src="{% static 'images/nf.jpg' %}">
+    <p class="lead">Full Stack Developper</p>
+    <hr class="my-4">
+    <p>Welcome to my Portfolio Website!</p>
+    <p>Here you will find all the informations about me, my skills, jobs, services and so on</p> <br><br>
+    <!-- <p>I specialize in : <br>
+       <br>
+      Bootstrap, HTML, JS, CSS <br>
+       <br>
+       <br>
+       <br>
+    </p> -->
+    <a class="btn btn-primary btn-lg" href="https://wa.me/681247014" target="_blank" rel="noopener" role="button">Let's Discuss</a>
+    
+  </div>
+
+<div class="container" style="margin-left: 40px; margin-top: 70px;">
+    <div class="row">
+        
+        <div class="col-md-9">
+            <h2>Skills</h2>
+            <p>My skills include:</p>
+            <ul>
+                <li>(Django , FastAPI, Express Js) Frameworks</li>
+                <li>Odoo 11, 15, 17 ERP</li>
+                <li>Analyse des données</li>
+                <li>Machine Learning Prediction</li>
+                <li>Python, JavaScript</li>
+                <li>Deployment on Production ( Docker, Docker-Compose ...)</li>
+                <li>Bootstrap</li>
+                <li>HTML, CSS,JavaScript</li>
+                <li>Deployment on Comtabo Server,  Pythonanywhere, Vercel, VPS </li>
+                <!-- Add more skills as needed -->
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h2>Download CV</h2>
+            <p>You can download my CV here:</p>
+            <a class="btn btn-primary" href="{% static 'CV_Frank_Anael_NGALEU_.pdf' %}">View CV</a>
+          </div>
+        <div class="col-md-6">
+          <h2>Projects</h2>
+          <p>Here are some of the 
+            <a href="{% url 'nfrank-portfolio-project' %}" rel="noopener">projects</a> I have worked on
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <h2>Contact Me</h2>
+          <p>If you'd like to get in touch, feel free to reach out to me:</p>
+          <ul>
+              <li><a href="mailto:contact@ssdsolution.hight" class="btn btn-primary btn-block">
+                  <i class="fas fa-envelope">nfrank@gmail.com</i></a>
+              </li>
+              <li><a href="https://linkedin.com/in/https://www.linkedin.com/in/frank-anael-ngaleu-87298b182/">LinkedIn</a></li>
+              <li><a href="https://github.com/nfrank75">GitHub</a></li>
+              <li><a href="https://twitter.com/Ngaleu_Frank">Twitter</a></li>
+              <li><a href="https://wa.me/681247014" target="_blank" rel="noopener" class="btn btn-success btn-block">
+                <i class="fab fa-whatsapp">Whatsapp</i></a>
+              </li>
+              
+          </ul>
+      </div>
+        
+    </div>
+
+      
+   </div>
+  
+
+
+{% endblock %}

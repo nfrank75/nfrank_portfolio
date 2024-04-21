@@ -1,0 +1,68 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} | Service {% endblock %}
+
+
+{% block content %}
+
+
+
+<div id="content" class="site-content center-relative">
+
+  <div class="container shadow mt-5 mb-5">
+    <div class="col-lg-12 text-center" style="color: #243781">
+      <h2>Services</h2>
+    </div>
+    
+</div>
+
+    
+    <div class="container mt-5 mb-5">
+    <div class="row mt-5 shadow">
+        <div id="content" class="site-content center-relative">
+            <article class="relative blog-item-holder center-relative has-post-thumbnail">
+                <div class="devhead">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12 text-center"> <!-- Ajouter la classe text-center ici -->
+                                {% for service in services %}
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-6 mb-lg-0 text-center text-lg-start">
+                                            <h2 class="title-st display-4 lh-1 mb-4">{{ service.name }}</h2><br />
+                                            <div class="col-sm-12" style="float: left;">
+                                                <p class="py-2 justify">
+                                                    {{ service.description }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <img style="width: 80%; height: 80%;" src="{{ service.image.url }}" alt="" />
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+    
+    <div class="container my-5">
+        <div class="row">
+          <div class="col-12 text-center">
+            <a href="https://wa.me/681247014" target="_blank" rel="noopener" class="btn btn-success btn-lg px-5 py-3">
+              + Services
+            </a>
+            
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} | About {% endblock %}
+
+{% block content %}
+
+<div id="content" class="site-content center-relative">
+
+
+  <div class="container shadow mt-5 mb-5">
+      <div class="col-lg-12 text-center" style="color: #243781">
+        <h2>About Me</h2>
+      </div>
+  </div>
+
+  
+  <div class="container mt-5 mb-5">
+  <div class="row mt-5 shadow">
+      <div id="content" class="site-content center-relative">
+          <article class="relative blog-item-holder center-relative has-post-thumbnail">
+              <div class="devhead">
+                  <div class="container">
+                      <div class="row align-items-center">
+                          <div class="col-lg-12 text-center"> <!-- Ajouter la classe text-center ici -->
+                              {% for service in services %}
+                              <div class="row">
+                                  <div class="col-lg-6">
+                                      <div class="mb-6 mb-lg-0 text-center text-lg-start">
+                                          <h2 class="title-st display-4 lh-1 mb-4">{{ service.name }}</h2><br />
+                                          <div class="col-sm-12" style="float: left;">
+                                              <p class="py-2 justify">
+                                                  {{ service.description }}
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                      <img style="width: 50%; height: 50%;" src="{{ service.image.url }}" alt="" />
+                                  </div>
+                              </div>
+                              {% endfor %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </article>
+      </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>About Me</h2>
+      <p>Introduce yourself briefly, highlighting your background, experience, and interests. Mention your career goals and what drives you as a developer.</p>
+      <p>Share your passion for web development and how you strive to create innovative and user-friendly solutions.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Technologies</h2>
+      <p>My skills include:</p>
+      <ul>
+        <li>Django Framework</li>
+        <li>Bootstrap</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <!-- Add more skills as needed -->
+      </ul>
+      <p>Describe your proficiency and experience in each skill. Highlight any notable projects or achievements related to these skills.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

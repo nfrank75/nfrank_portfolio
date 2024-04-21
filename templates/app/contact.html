@@ -1,0 +1,83 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} | Contact {% endblock %}
+
+
+{% block content %}
+
+<style>
+    .centered-placeholder::placeholder {
+        text-align: center;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        // Initialiser les fonctionnalités de Bootstrap
+        $('.modal').modal();
+    });  
+</script>
+
+<div id="content" class="site-content center-relative">
+    <br><br><br>
+    <div class="current-title">
+        <h1 class="career-title text-center mx-auto">
+            Contact Us!
+        </h1>
+    </div>
+    <div class="current-title">
+        <h1 class="career-title text-center mx-auto">
+            Veuillez nous contacter pour toute collaboration !
+        </h1>
+    </div>
+
+    <div class="devhead text-center">
+        <!-- " style="margin-left: 150px;" -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 warning"></div>
+                <div class="devhead">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <form class="row g-3" method="post">
+                                {% csrf_token %}
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="inputName" class="career-label-form col-form-label">Nom</label>
+                                        <input type="text" class="form-control centered-placeholder" name="name" id="inputName" placeholder="Enter your name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="inputEmail" class="career-label-form col-form-label">Email</label>
+                                        <input type="email" class="form-control centered-placeholder" name="email" id="inputEmail" placeholder="Enter tour email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="inputPhone" class="career-label-form col-form-label">Téléphone</label>
+                                        <input type="text" class="form-control centered-placeholder" name="phone" id="inputPhone" placeholder="Enter your phone" required>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="inputMessage" class="career-label-form col-form-label">Message</label>
+                                        <textarea class="form-control centered-placeholder" name="message" id="inputMessage" rows="5" placeholder="Entrez votre message" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 text-center">
+                                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#messageModal">Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
